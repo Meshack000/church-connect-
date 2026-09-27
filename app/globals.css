@@ -1,26 +1,53 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-paper: #EDE9E0;
+  --color-ink: #24231F;
+
+  --color-vesper: #263A5C;
+  --color-vesper-light: #3B5580;
+  --color-vesper-dark: #182640;
+
+  --color-ember: #A44A2F;
+  --color-ember-light: #C1613F;
+  --color-ember-dark: #7E3A24;
+
+  --color-brass: #B08D3E;
+  --color-brass-light: #C9A756;
+  --color-brass-dark: #8C6F2F;
+
+  --color-moss: #5C6E4C;
+  --color-moss-light: #748A60;
+  --color-moss-dark: #465438;
+
+  --font-display: var(--font-newsreader), serif;
+  --font-body: var(--font-inter), sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #EDE9E0;
+  color: #24231F;
+}
+
+::selection {
+  background-color: #B08D3E;
+  color: #EDE9E0;
+}
+
+:focus-visible {
+  outline: 2px solid #263A5C;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
